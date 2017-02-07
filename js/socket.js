@@ -1,5 +1,10 @@
 var conn = new WebSocket('ws://localhost:8080');
 var store = window.sessionStorage;
+if (!conn) {
+  store.removeItem('SkrillChatLoggedState');
+  store.removeItem('SkrillChatUsername');
+  window.location.replace("/");
+}
 
 $(document).ready(function(){
 
