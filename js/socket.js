@@ -1,6 +1,11 @@
 var url = window.location.host;
 url = url.split(":");
-var conn = new WebSocket('ws://'+url[0]+':8080');
+if (url[0] == 'localhost') {
+  var conn = new WebSocket('ws://'+url[0]+':8080');
+}
+else {
+  var conn = new WebSocket('wss://'+url[0]);
+}
 var store = window.sessionStorage;
 if (!conn) {
   store.removeItem('SkrillChatLoggedState');
