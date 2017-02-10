@@ -60,7 +60,7 @@ class App {
      * @param string        $address  IP address to bind to. Default is localhost/proxy only. '0.0.0.0' for any machine.
      * @param LoopInterface $loop     Specific React\EventLoop to bind the application to. null will create one for you.
      */
-    public function __construct($httpHost = 'skrill-chat.herokuapp.com', $port = 8080, $address = '0.0.0.0', LoopInterface $loop = null) {
+    public function __construct($httpHost = 'localhost', $port = 8080, $address = '127.0.0.1', LoopInterface $loop = null) {
         if (extension_loaded('xdebug')) {
             trigger_error('XDebug extension detected. Remember to disable this if performance testing or going live!', E_USER_WARNING);
         }
